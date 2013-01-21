@@ -36,3 +36,9 @@
 .number + .number:before {
     content: ',';
 }
+
+.entry .number:after {
+    content: "|";
+    text-decoration: blink;
+    vertical-align: 10%;
+}
