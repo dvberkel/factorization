@@ -1,0 +1,38 @@
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans+Mono);
+
+.factors-ui {
+    width: 50%;
+    margin: auto;
+}
+
+.entry, .result {
+    width: 100%;
+    margin: 0%;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    background-color: #eeeeee;
+    text-align: center;
+    font-family: 'Droid Sans Mono', sans-serif;
+    font-size: 72px;
+}
+
+.entry {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.result {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.number {
+    margin: 0;
+    padding: 0;
+}
+
+.number + .number:before {
+    content: ',';
+}
