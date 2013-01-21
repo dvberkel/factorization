@@ -1,3 +1,3 @@
-Factor = {
+factors = {
     "version" : "0.0.0"
 };

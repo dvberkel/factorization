@@ -29,7 +29,7 @@ module.exports = function(grunt) {
         },
         concat: {
             dist: {
-                src: ['<banner:meta.banner>', 'src/namespace.js' ],
+                src: ['<banner:meta.banner>', 'src/namespace.js', 'src/Factorization.js' ],
                 dest: 'dist/<%= pkg.name %>.js'
             }
         },
@@ -68,7 +68,7 @@ module.exports = function(grunt) {
 		loadFixtures: false,
 		_: false,
 		Backbone: false,
-		Factor: true
+		factors: true
             }
         },
         uglify: {}
