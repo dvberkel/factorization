@@ -29,7 +29,7 @@ module.exports = function(grunt) {
         },
         concat: {
             dist: {
-                src: ['<banner:meta.banner>', 'src/namespace.js', 'src/Factorization.js' ],
+                src: ['<banner:meta.banner>', 'src/namespace.js', 'src/Factorization.js', 'src/FactorizationView.js' ],
                 dest: 'dist/<%= pkg.name %>.js'
             }
         },
