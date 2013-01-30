@@ -42,3 +42,8 @@
     text-decoration: blink;
     vertical-align: 10%;
 }
+
+.processing:after {
+    content: "...";
+    text-decoration: blink;
+}

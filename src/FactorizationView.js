@@ -91,6 +91,7 @@
 
     var FactorsView = Base.extend({
         initialize : function(){
+            this.initializeWorker();
             this.model.on("change:n", this.render, this);
             this.render();
         },
@@ -99,15 +100,20 @@
             this.addClass("factors");
         },
 
+        initializeWorker : function(){
+            var self = this;
+            this.worker = new factors.Worker(function(factor){
+                new NumberView({ el : self.container(), model : new FactorizationModel({ n : factor })});
+            }, function(){
+                self.container().removeClass("processing");
+            });
+        },
+
         render : function(){
             var container = this.container();
             container.empty();
             container.addClass("processing");
-            factors.of(this.model.get("n"), function(factor){
-                new NumberView({ el : container, model : new FactorizationModel({ n : factor })});
-            }, function(result){
-                container.removeClass("processing");
-            });
+            this.worker.factor(this.model.get("n"));
         }
     });
 

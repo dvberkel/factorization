@@ -15,9 +15,24 @@
              }
              d += 1;
          }
-         onFinish(result);
+         onFinish();
          return result;
      };
 
+     var FactorsWorker = function(onFactor, onFinish){
+         var worker = new Worker("src/MathWorker.js");
+
+         worker.addEventListener("message", function(event){
+             var data = event.data;
+             if (data.type === "factor") { onFactor(data.d); }
+             if (data.type === "finish") { onFinish(); }
+         });
+
+         this.factor = function(n){
+             worker.postMessage({ "n" : n });
+         };
+     };
+
      factors.of = factorize;
+     factors.Worker = FactorsWorker;
 })(factors);
