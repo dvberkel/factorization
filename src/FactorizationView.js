@@ -102,8 +102,11 @@
         render : function(){
             var container = this.container();
             container.empty();
+            container.addClass("processing");
             factors.of(this.model.get("n"), function(factor){
                 new NumberView({ el : container, model : new FactorizationModel({ n : factor })});
+            }, function(result){
+                container.removeClass("processing");
             });
         }
     });
