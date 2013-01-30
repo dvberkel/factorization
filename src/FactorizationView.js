@@ -102,7 +102,7 @@
         render : function(){
             var container = this.container();
             container.empty();
-            _.each(factors.of(this.model.get("n")), function(factor){
+            factors.of(this.model.get("n"), function(factor){
                 new NumberView({ el : container, model : new FactorizationModel({ n : factor })});
             });
         }
