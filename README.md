@@ -1,4 +1,4 @@
 Factoring
 =========
 
-A project to test out the js logging framework.
+A project to test out web workers.
